@@ -2,6 +2,21 @@
   "name": "clean-node-api",
   "version": "1.0.0",
   "main": "index.js",
+  "lint-staged": {
+    "*.js": [
+      "standard --fix", "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "author": "Leonardo <leonardodf95@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "standard": "^17.0.0"
+  }
 }
