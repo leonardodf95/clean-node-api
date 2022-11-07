@@ -3,7 +3,7 @@ class LoginRouter {
     const { email, password } = httpRequest.body
     if (!email || !password) {
       return {
-        statuscode: 400
+        statusCode: 400
       }
     }
   }
@@ -18,7 +18,7 @@ describe('Login router', () => {
       }
     }
     const httpResponse = sut.route(httpRequest)
-    expect(httpResponse.status)
+    expect(httpResponse.statusCode).toBe(400)
   })
 
   test('Should return 400 if no password is provided', () => {
@@ -29,6 +29,6 @@ describe('Login router', () => {
       }
     }
     const httpResponse = sut.route(httpRequest)
-    expect(httpResponse.status)
+    expect(httpResponse.statusCode).toBe(400)
   })
 })
